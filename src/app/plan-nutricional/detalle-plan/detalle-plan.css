@@ -1,0 +1,77 @@
+section {
+  margin: 40px 60px;
+  font-family: 'Inter';
+}
+
+.informacion {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tarjeta{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb(215,231,207);
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgba(16, 185, 129, 0.22);
+}
+
+.englobar-icono {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.botones {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.botones button {
+  display: flex;
+  padding: 12px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 300;
+  cursor: pointer;
+  transition: .15s ease;
+}
+
+#editar {
+  background-color: rgb(32,223,108);
+}
+
+#editar:hover {
+  background-color: rgb(25, 190, 91);
+  transform: scale(1.03);
+}
+
+#exportar {
+  background-color: rgb(255,117,117);
+}
+
+#exportar:hover {
+  background-color: rgb(224, 102, 102);
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  section {
+    margin: 20px 16px;
+  }
+
+  .botones {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .botones button {
+    width: 50%;
+  }
+}

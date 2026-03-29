@@ -1,0 +1,42 @@
+header{
+    width: 100%;
+    background-color: #f9fbf8;
+    border-bottom: 1px solid rgb(224,224,224);
+    padding: 10px 10px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    font-family: 'Inter';
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-logo{
+    margin-left: 20px;
+    
+}
+
+.contenedor-links{
+    margin-right: 20px;
+}
+
+.contenedor-links a{
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 0.85rem;
+}
+
+.contenedor-links a:hover{
+    color: rgb(32,223,108);
+}
+
+.contenedor-links a.active {
+    color: rgb(32,223,108);
+}

@@ -1,0 +1,48 @@
+@let turnos = this.turnosFiltrados();
+
+<div class="contenedor-principal">
+  <div class="contenido-cabecera">
+    <div class="contenedor-titulo">
+      <h1>Proximas consultas</h1>
+      <p class="verde">Aqui tienes un resumen de tus proximas citas</p>
+    </div>
+
+    <div class="filtro">
+      <p>Filtrar por:</p>
+      <select class="filtros" (change)="onFiltroChange($event)">
+        <option value="Todos">Todos</option>
+        <option value="Pendiente">Pendiente</option>
+        <option value="Realizado">Realizado</option>
+        <option value="Cancelado">Cancelado</option>
+      </select>
+
+    </div>
+
+  </div>
+  <div class="contenedor-turnos">
+    @for (turno of turnos; track turno.id) {
+    <div class="turno">
+      <div class="contenedor-nombre">
+        <p class="nombre-paciente">{{ obtenerPaciente(turno.idPaciente!) }}</p>
+        <p class="verde">{{ turno.fecha | date:'dd-MM-yyyy' }} - {{ turno.hora }}</p>
+        <div class="contenedor-observaciones">
+          <p><strong>Observaciones</strong></p>
+          <p>{{turno.observaciones}}</p>
+
+        </div>
+      </div>
+
+      <span class="estado" [ngClass]="turno.estado"> {{ turno.estado }} </span>
+      <div class="contenedor-btn">
+
+        @if(turno.estado === 'Cancelado' || turno.estado === 'Realizado'){
+        <p (click)="eliminarTurno(turno.id!)">Eliminar turno</p>
+        } @else if(turno.estado === 'Pendiente'){
+        <p (click)="editarTurno(turno.id!)">Reprogramar</p>
+        <p (click)="cancelarTurno(turno.id!)">Cancelar turno</p>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</div>
